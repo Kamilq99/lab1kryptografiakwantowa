@@ -61,3 +61,9 @@ Jeśli potrzeba, zainstalować bibliotekę Qiskit i numpy (lub inną wybraną).
 
 4. Podać na wejście wybraną kombinację stanów \( |0\rangle \) i \( |1\rangle \) i zinterpretować wyniki.
 
+Aby uruchomić skrypty, użyj następujących poleceń:
+
+```bash
+python matrix.py
+python hadamard_matrix.py
+```
