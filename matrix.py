@@ -26,3 +26,28 @@ for i, density_matrix in enumerate(density_matrices):
     print(f"ρ_{i+1}:")
     print(density_matrix)
     print()
+
+# Własności rozwiązań
+print("Własności rozwiązań:")
+for i, rho in enumerate(density_matrices):
+    print(f"\nρ_{i+1}:")
+    # a) Sprawdź czy ρ jest samosprzężone
+    print(f"a) Czy ρ_{i+1} jest samosprzężone? {np.allclose(rho, np.conj(rho.T))}")
+    
+    # b) Sprawdź czy ρ jest dodatnio określone
+    print(f"b) Czy ρ_{i+1} jest dodatnio określone? {np.all(np.linalg.eigvals(rho) > 0)}")
+    
+    # c) Sprawdź idempotyczność ρ^2 = ρ
+    rho_squared = np.dot(rho, rho)
+    print(f"c) Czy ρ^2_{i+1} = ρ_{i+1}? {np.allclose(rho_squared, rho)}")
+    
+    # d) Oblicz ślady Tr(ρ) oraz Tr(ρ^2)
+    trace_rho = np.trace(rho)
+    trace_rho_squared = np.trace(rho_squared)
+    print(f"d) Ślady Tr(ρ_{i+1}) oraz Tr(ρ^2_{i+1}): {trace_rho}, {trace_rho_squared}")
+    print("   Ślady reprezentują sumę prawdopodobieństw danego stanu kwantowego.")
+    
+# e) Znajdź sumę wszystkich macierzy gęstości P ρλ
+sum_density_matrices = np.sum(density_matrices, axis=0)
+print("\nSuma wszystkich macierzy gęstości P ρλ:")
+print(sum_density_matrices)
