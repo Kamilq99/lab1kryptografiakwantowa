@@ -28,3 +28,11 @@ output_state = result.get_statevector(qc)
 
 print("\nWynik po zastosowaniu obwodu kwantowego:")
 print(output_state)
+
+## Uruchamianie
+
+Aby uruchomić skrypty, użyj następujących poleceń:
+
+```bash
+python matrix.py
+python hadamard_matrix.py
